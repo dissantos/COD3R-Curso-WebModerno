@@ -1,0 +1,15 @@
+body{
+    font-size: 40px;
+}
+ol,ul{
+    padding: 0;
+}
+
+li{
+    margin-left: 20px;
+}
+
+.tag{
+    border: solid 5px;
+    margin: 10px
+}

@@ -1,0 +1,54 @@
+<video id="video" width="800" height="600" controls autoplay controlsList = "nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+
+</video>
+
+<div progresso = "video" class="prog">
+    <div>
+
+    </div>
+</div>
+
+<div>
+    <button play = "video">Play</button>
+    <button pause = "video">Pause</button>
+</div>
+
+<style>
+    .prog{
+        height: 20px;
+        width: 600px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+    .prog > div{
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: left;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    function configurar(id){
+        const idVideo = document.getElementById(id)
+        idVideo.oncontextmenu = function(){
+            return false
+        }
+        document.querySelector(`[play = ${id}]`).onclick = function(e){
+            idVideo.play()
+        }
+        document.querySelector(`[pause =  ${id}`).onclick = function(e){
+            idVideo.pause()
+        }
+        setInterval(()=>{
+            const percentual = (video.currentTime/video.duration)*100
+            const progressoVideo = document.querySelector(`[progresso = ${id}] > div`)
+            progressoVideo.style.width = `${percentual}%`
+            progressoVideo.innerHTML = `${percentual.toFixed(1)}%`
+        },500)
+    }
+    configurar("video")
+</script>

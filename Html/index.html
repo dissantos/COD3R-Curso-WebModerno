@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wm-nav="exercicios/teste.html">00.1 _ Teste1</a> <br><br>
+            <a href wm-nav="exercicios/teste2.html">00.2 _ Teste2</a> <br><br>
+            <a href wm-nav="exercicios/texto.html">01 _ Texto</a> <br><br>
+            <a href wm-nav="exercicios/lista.html">02 _ Lista</a> <br><br>
+            <a href wm-nav="exercicios/listaDesafio.html">02.1 _ Desafio</a> <br><br>
+            <a href wm-nav="exercicios/links.html">03 _ Link</a> <br><br>
+            <a href wm-nav="exercicios/tabela.html">04 _ Tabela</a> <br><br>
+            <a href wm-nav="exercicios/forms/form.html">05 _ Formularios</a> <br><br>
+            <a href wm-nav="exercicios/imagem.html">06 _ Imagem</a> <br><br>
+            <a href wm-nav="exercicios/video.html">07 _ Video</a> <br><br>
+            <a href wm-nav="exercicios/tags.html">08 _ Tags não visuais</a> <br><br>
+        </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+
+
+</html>

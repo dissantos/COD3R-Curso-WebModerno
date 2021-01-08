@@ -1,0 +1,20 @@
+<h1>Formulario</h1>
+
+<form>
+    Nome:
+    <input type="text" name="nome">
+    Senha: 
+    <input type="password" name="senha"><br><br>
+    <div>
+        <input type="radio" name="sexo" value="masculino">masculino
+        <input type="radio" name="sexo" value="feminino">feminino
+    </div>
+    <button formaction="http://localhost:3003/usuarios" formmethod="POST">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3" formmethod="POST">Alterar</button>
+</form>
+
+<style>
+    input[type=radio]{
+        display: inline
+    }
+</style>

@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Notebook Lenovo",
+      "price": 2700.79
+    },
+    {
+      "id": 3,
+      "name": "Samsung S20+",
+      "price": 8500
+    },
+    {
+      "name": "Perfume",
+      "price": "2",
+      "id": 7
+    }
+  ]
+}

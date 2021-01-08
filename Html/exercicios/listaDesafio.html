@@ -1,0 +1,32 @@
+<h1>Desafio</h1>
+
+<ul class="tree">
+    <li>
+        <span item >Diego</span>
+        <ul>
+            <li>Leite</li>
+            <li>queijos</li>
+        </ul>
+    </li>
+    <li>
+        <span item>Bianca</span>
+        <ul>
+            <li>Ovos</li>
+            <li>Farinha</li>
+        </ul>
+    </li>
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[item]').forEach(function(link){
+        link.onclick = e =>{
+            const ul = link.nextElementSibling
+            const d = ul.style.display
+            if(d === 'none'){
+                ul.style.display = 'block'
+            }else{
+                ul.style.display = 'none'
+            }
+        }
+    })
+</script>
